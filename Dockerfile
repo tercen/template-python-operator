@@ -1,4 +1,4 @@
-FROM tercen/runtime-python39:001
+FROM tercen/runtime-python39:0.0.2
 #FROM tercen/runtime-r40-slim:4.0.4-0
 
 COPY . /operator
