@@ -2,7 +2,7 @@
 # virtualenv venv -p /usr/bin/python3.9
 # python3 -m pip install wheel
 # python3 -m pip install git+https://github.com/tercen/tercen_python_client
-# python3 -m pip install --force https://raw.githubusercontent.com/tercen/tercen_python_client/main/dist/tercen-0.0.1-py3-none-any.whl
+# python3 -m pip install --force https://raw.githubusercontent.com/tercen/tercen_python_client/main/dist/tercen-0.0.3-py3-none-any.whl
 from tercen.client import context as ctx
 import numpy as np
 
