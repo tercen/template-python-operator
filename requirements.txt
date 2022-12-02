@@ -1,2 +1,2 @@
 numpy==1.23.5
-tercen==0.0.1
+tercen==0.0.2
