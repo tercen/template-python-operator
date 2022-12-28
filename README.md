@@ -1,36 +1,66 @@
 
-# build
+# Simple Python Docker Operator
 
-```shell
-VERSION=0.14.0
-docker build -t tercen/simple_docker_operator:$VERSION .
-docker push tercen/simple_docker_operator:$VERSION
-# update operator.json file with correct docker image version
+Cell-wise mean calculated implemented in Python.
+
+
+
+
+
+
+
+## Helpful Commands
+
+### Create a virtual environment
+
+```bash
+python3 -m venv -p PATH_TO_PYTHON venv
+source venv/bin/activate
+```
+
+### Install Tercen Python Client
+
+```bash
+python3 -m pip install --force git+https://github.com/tercen/tercen_python_client@0.1.7
+```
+
+### Wheel
+
+Though not strictly mandatory, many packages require it.
+
+```bash
+python3 -m pip install wheel
+```
+
+### Generating Requirements.txt 
+
+```bash
+python3 -m tercen.util.requirements . > requirements.txt
+```
+
+
+### VSCode Launch
+
+To run and debug the code, `VSCode` requires a launch.json file, which will be automatically created.
+If the generated file does not run properly within the virtual environment, use the one below:
+
+```JSON
 {
-        echo '{'
-        echo '"name": "simple docker operator",'
-        echo '"description": "simple docker operator",'
-        echo '"tags": [""],'
-        echo '"authors": ["tercen"],'
-        echo '"urls": ["https://github.com/tercen/simple_docker_operator"],'
-        echo '"container":"tercen/simple_docker_operator:'$VERSION'",'  
-        echo '"properties": [ ]'
-        echo '}'
-} > operator.json
-
-git add -A && git commit -m "$VERSION" && git tag $VERSION && git push && git push --tags
-
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "python": "PATH TO VENV PYTHON",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": { "PYTHONPATH": "${workspaceRoot}"}
+            
+        }
+    ]
+}
 ```
 
-# inspect
-
-```shell
-docker run --rm --entrypoint=bash tercen/simple_docker_operator:$VERSION -c "R --version"
-docker run -it --rm --entrypoint=bash tercen/simple_docker_operator:$VERSION
-```
- 
-# push
-
-```shell
-docker push tercen/simple_docker_operator:$VERSION
-```
+    
