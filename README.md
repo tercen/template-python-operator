@@ -1,11 +1,7 @@
 
-# Simple Python Docker Operator
+# Template Python Operator
 
 Cell-wise mean calculated implemented in Python.
-
-
-
-
 
 
 

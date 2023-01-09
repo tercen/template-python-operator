@@ -1,9 +1,9 @@
 {
-"name": "simple python operator",
-"description": "Mean operator implemented in Python",
-"tags": [""],
-"authors": ["tercen"],
-"urls": ["https://github.com/tercen/simple_docker_operator"],
-"container":"tercen/simple_python_docker_operator:0.0.12",  
-"properties": [ ]
+    "name": "Template Python operator",
+    "description": "Mean operator implemented in Python",
+    "tags": ["template"],
+    "authors": ["tercen"],
+    "urls": ["https://github.com/tercen/template-python-operator"],
+    "container":"tercen/template-python-operator:0.0.12",
+    "properties": [ ]
 }
