@@ -41,7 +41,7 @@ jobs:
           pip3 install --force -r requirements.txt
           pip3 install unittest2
       - name: Run UnitTests
-        run: python3 -m unittest unitteststests/test*
+        run: python3 -m unittest unittests/test*
 
 
 
