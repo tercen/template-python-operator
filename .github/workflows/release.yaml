@@ -25,8 +25,8 @@ jobs:
           echo "REPO_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
           echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - uses: tercen/actions/start-tercen@main
-      - name: Check open port
-        run: bash wait_conn.sh 127.0.0.1 5400
+      #- name: Check open port
+      #  run: bash wait_conn.sh 127.0.0.1 5400
       - name: Install client dependencies
         run: |
           python3 -m pip install --upgrade pip
