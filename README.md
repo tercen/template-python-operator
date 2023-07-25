@@ -3,20 +3,20 @@
 
 Cell-wise mean calculated implemented in Python.
 
-
 ## Python operator - Development workflow
 
 * Set up [the Tercen Studio development environment](https://github.com/tercen/tercen_studio)
 * Create a new git repository based on the [template Python operator](https://github.com/tercen/template-python-operator)
 * Open VS Code Server by going to: http://127.0.0.1:8443
 * Clone this repository into VS Code (using the 'Clone from GitHub' command from the Command Palette for example)
-* Install core requirements by running the following command in the terminal:
+* Load the environment and install core requirements by running the following commands in the terminal:
 
 ```bash
+source /config/.pyenv/versions/3.9.0/bin/activate
 pip install -r requirements.txt
 ```
 
-* Develop your operator. Note that you can interact with an existing data step by specifying arguments to the `TercenContext` function: 
+* Develop your operator. Note that you can interact with an existing data step by specifying arguments to the `TercenContext` function:
 
 ```python
 tercenCtx = ctx.TercenContext()
@@ -44,13 +44,6 @@ python3 -m tercen.util.requirements . > requirements.txt
 
 
 ## Helpful Commands
-
-### Create a virtual environment
-
-```bash
-python3 -m venv -p PATH_TO_PYTHON venv
-source venv/bin/activate
-```
 
 ### Install Tercen Python Client
 
