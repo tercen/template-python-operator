@@ -4,6 +4,45 @@
 Cell-wise mean calculated implemented in Python.
 
 
+## Python operator - Development workflow
+
+* Set up [the Tercen Studio development environment](https://github.com/tercen/tercen_studio)
+* Create a new git repository based on the [template Python operator](https://github.com/tercen/template-python-operator)
+* Open VS Code Server by going to: http://127.0.0.1:8443
+* Clone this repository into VS Code (using the 'Clone from GitHub' command from the Command Palette for example)
+* Install core requirements by running the following command in the terminal:
+
+```bash
+pip install -r requirements.txt
+```
+
+* Develop your operator. Note that you can interact with an existing data step by specifying arguments to the `TercenContext` function: 
+
+```python
+tercenCtx = ctx.TercenContext()
+```
+
+http://127.0.0.1:5402/admin/w//ds/
+```python
+tercenCtx = ctx.TercenContext(
+    workflowId="066a65dced98e7c2458cfbb1e30038d3",
+    stepId="307f7d8a-efdd-45e7-99cc-e128d792bb84",
+    username="admin",
+    password="admin",
+    serviceUri = "http://127.0.0.1:5400/" 
+)
+```
+
+* Generate requirements
+
+```bash
+python3 -m tercen.util.requirements . > requirements.txt
+```
+
+* Push your changes to GitHub: triggers CI GH workflow
+* Tag the repository: triggers Release GH workflow
+* Go to tercen and install your operator
+
 
 ## Helpful Commands
 
@@ -27,13 +66,6 @@ Though not strictly mandatory, many packages require it.
 ```bash
 python3 -m pip install wheel
 ```
-
-### Generating Requirements.txt 
-
-```bash
-python3 -m tercen.util.requirements . > requirements.txt
-```
-
 
 ### VSCode Launch
 
