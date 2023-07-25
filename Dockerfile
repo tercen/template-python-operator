@@ -3,7 +3,7 @@ FROM tercen/runtime-python39:0.1.0
 COPY . /operator
 WORKDIR /operator
 
-RUN source ~/.pyenv/versions/3.9.0/bin/activate
+RUN . ~/.pyenv/versions/3.9.0/bin/activate
 RUN python3 -m pip install -r ./requirements.txt
 
 ENV TERCEN_SERVICE_URI https://tercen.com
