@@ -22,14 +22,13 @@ pip install -r requirements.txt
 tercenCtx = ctx.TercenContext()
 ```
 
-http://127.0.0.1:5402/admin/w//ds/
 ```python
 tercenCtx = ctx.TercenContext(
-    workflowId="066a65dced98e7c2458cfbb1e30038d3",
-    stepId="307f7d8a-efdd-45e7-99cc-e128d792bb84",
-    username="admin",
-    password="admin",
-    serviceUri = "http://127.0.0.1:5400/" 
+    workflowId="YOUR_WORKFLOW_ID",
+    stepId="YOUR_STEP_ID",
+    username="admin", # if using the local Tercen instance
+    password="admin", # if using the local Tercen instance
+    serviceUri = "http://127.0.0.1:5400/" # if using the local Tercen instance 
 )
 ```
 
@@ -56,7 +55,7 @@ source venv/bin/activate
 ### Install Tercen Python Client
 
 ```bash
-python3 -m pip install --force git+https://github.com/tercen/tercen_python_client@0.1.7
+python3 -m pip install --force git+https://github.com/tercen/tercen_python_client@0.7.1
 ```
 
 ### Wheel
