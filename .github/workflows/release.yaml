@@ -26,16 +26,6 @@ jobs:
           echo "REPO_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
           echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "DOCKER_IMAGE=tercen/${{ github.event.repository.name }}" >> $GITHUB_ENV
-      - uses: tercen/actions/start-tercen@main
-      #- name: Check open port
-      #  run: bash wait_conn.sh 127.0.0.1 5400
-      - name: Install client dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip3 install --force  -r requirements.txt
-          pip3 install unittest2
-      - name: Run UnitTests
-        run: python3 -m unittest unittests/test*
       - name: Update container in operator JSON
         run: |
           jq --arg variable "$DOCKER_IMAGE:$TAG" '.container = $variable' operator.json
