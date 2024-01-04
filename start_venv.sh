@@ -30,7 +30,11 @@ else
 
     python3 -m venv ${VENV_PATH}
     activate
-    python3 -m pip install -r requirements.txt
+    if [ ! -z requirements.txt ]
+    then
+        python3 -m pip install -r tercen_requirements.txt --force
+    fi
+
 fi
 
 

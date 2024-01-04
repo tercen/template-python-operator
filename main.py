@@ -5,7 +5,7 @@ tercenCtx = ctx.TercenContext()
 
 df = (
     tercenCtx
-    .select(['.y', '.ci', '.ri'])
+    .select(['.y', '.ci', '.ri'], df_lib="pandas")
     .groupby(['.ci','.ri'], as_index=False)
     .mean()
     .rename(columns={".y":"mean"})
