@@ -5,3 +5,5 @@ renv/python/
 renv/staging/
 
 test
+tests
+workflow_tests
