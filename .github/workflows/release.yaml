@@ -52,20 +52,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            TERCEN_PAT=${{ secrets.TERCEN_PAT }}
-      - name: Create required package.json
-        run: echo '{}' > package.json
-      - name: Build changelog
-        id: Changelog
-        uses: tercen/generate-changelog-action@master
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.TERCEN_PAT }} # This token is provided by Actions, you do not need to create your own token
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{steps.Changelog.outputs.changelog}}
-          draft: false
-          prerelease: false
+            TERCEN_PAT=${{ secrets.GITHUB_TOKEN }}
+
