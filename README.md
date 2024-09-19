@@ -59,28 +59,3 @@ Though not strictly mandatory, many packages require it.
 python3 -m pip install wheel
 ```
 
-### VSCode Launch
-
-To run and debug the code, `VSCode` requires a launch.json file, which will be automatically created.
-If the generated file does not run properly within the virtual environment, use the one below:
-
-```JSON
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "python": "PATH TO VENV PYTHON",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "env": { "PYTHONPATH": "${workspaceRoot}"}
-            
-        }
-    ]
-}
-```
-
-    
