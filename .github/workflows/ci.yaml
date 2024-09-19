@@ -19,6 +19,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
+      repository-projects: write
       #
     steps:
       - name: Checkout repository
@@ -48,4 +49,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            TERCEN_PAT=${{ secrets.TERCEN_PAT }}
+            TERCEN_PAT=${{ secrets.GITHUB_TOKEN }}
