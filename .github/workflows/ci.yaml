@@ -47,5 +47,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            TERCEN_PAT=${{ secrets.GITHUB_TOKEN }}
+          # secrets: |
+            # GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
