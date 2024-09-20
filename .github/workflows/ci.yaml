@@ -1,4 +1,4 @@
-name: Create and publish a Docker image
+name: CI Workflow
 
 on:
   push:
@@ -47,5 +47,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          # A PAT is needed for this action, GITHUB_TOKEN cannot get relevant permission 
           # secrets: |
-            # GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+            # github_pat=${{ secrets.GH_PAT }}
