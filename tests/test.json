@@ -9,5 +9,7 @@
     "colors": ["Facility.Type"],
     "labels": ["Facility.Name"],
     "yAxis": "Procedure.Hip Knee.Cost",
-    "xAxis": ""
+    "xAxis": "",
+    "equalityMethod": "R2",
+    "r2": 0.99
   }
